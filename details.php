@@ -1,3 +1,14 @@
+<?php
+
+$get = '';
+if(isset($_GET['get'])) {
+    
+    $get = trim($_GET['get']);
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +19,7 @@
     <script src="js/main.js"></script>
     <title>Online Store</title>
 </head>
-<body onload="addProductsToMainScreen()">
+<body onload="getDetails('<?php echo htmlspecialchars($get); ?>')">
     <header>
         <nav class="nav-header-main clearfix">         
             <ul>
@@ -17,13 +28,11 @@
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
             </ul>
-            <button type="button" onclick="addProductsToMainScreen()">ADD ALL PRODUCT</button>
-            <button type="button" onclick="clearAllProducts()">CLAR ALL PRODUCTS</button>
         </nav>
     </header>
     <main>
-        <section id="main-section">
-
+        <section id="details-section">
+            
         </section>
     </main>
     <footer>
